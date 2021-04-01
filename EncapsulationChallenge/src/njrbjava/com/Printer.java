@@ -3,7 +3,7 @@ package njrbjava.com;
 public class Printer {
     private int tonerLevel;
     private int pagesPrinted;
-    private boolean isDuplex;
+    private boolean duplex;
 
     public Printer(int tonerLevel, boolean isDuplex) {
         if (tonerLevel > -1 && tonerLevel <= 100) {
@@ -12,11 +12,11 @@ public class Printer {
         else {
             this.tonerLevel = -1;
         }
-        this.isDuplex = isDuplex;
+        this.duplex = isDuplex;
         this.pagesPrinted = 0;
     }
 
-    public int fillUpToner(int level) {
+    public int addToner(int level) {
         if (level > 0 && level <= 100) {
             if (this.tonerLevel + level > 100) {
                 return -1;
@@ -30,7 +30,7 @@ public class Printer {
     }
 
     public int printPages(int numberOfPages) {
-        if (this.isDuplex) {
+        if (this.duplex) {
             numberOfPages = (numberOfPages / 2) + (numberOfPages % 2);
             System.out.println("Printing in duplex mode");
         }
