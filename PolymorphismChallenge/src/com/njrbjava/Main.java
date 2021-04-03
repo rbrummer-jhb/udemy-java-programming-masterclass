@@ -83,17 +83,17 @@ class Audi extends Car {
 
     @Override
     public String startEngine() {
-        return "Audi : startEngine()";
+        return getClass().getSimpleName() + " : startEngine()";
     }
 
     @Override
     public String accelerate() {
-        return "Audi : accelerate()";
+        return getClass().getSimpleName() + " : accelerate()";
     }
 
     @Override
     public String brake() {
-        return "Audi : brake()";
+        return getClass().getSimpleName() + " : brake()";
     }
 }
 
